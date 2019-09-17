@@ -1,4 +1,4 @@
-    # Semina Breast Classifer
+# Semina Breast Classifer
 
 This is a Project from Semina which seeks to create AIS (Artificical Intelligent Systems) which enables pathologist and medical experts to be able to classify a woman to be etheir be Benign or Malignant when it comes to being Diagnosed for Breast Cancer Either by FNA Biopsy (Fine Needle Aspiration) or Mammography. The DataSets for this project comes makes use of Data from Wincosin which is FNA  based Data of cells, DDSM and MIAS which are Dataset obtained from Mammography which in retrospect are mammograms on is in form of serialized tfrecords and the later in bpm (bitmap) Images.
 
@@ -12,7 +12,7 @@ The project is being developed by DeveloperPrince being guided by Advisory Patho
     1.) 8 Gig Ram
     2.) CPU: Intel Xeon, Intel i3 2.5 GHz QuadProcessor, Intel i5 2.3 GHz QuadProcessor, Intel i7        2.3 GHz QuadProcessor (either of the processors as a minimum requirement)
     3.) GPU: - NVidia P800 (4GB dedicated video memory)
-    4.) Storage: 40GB HDD preferrable SDD
+    4.) Storage: 40GB HDD preferable SDD.
 
 2.) Programing Languages:
     1.) Python
@@ -20,9 +20,11 @@ The project is being developed by DeveloperPrince being guided by Advisory Patho
 
 2.) Core Libraries and Frameworks:
     1.) Tensorflow
+    2.) Theano
+    3.) CNTK
     2.) Pandas
     3.) Numpy
-    4.) TensorFlow.Keras
+    4.) Keras
 
 3.) Optional Libraries:
     1.) OpenCV

@@ -2,7 +2,6 @@ from __future__ import absolute_import, division, print_function
 
 from keras.models import Sequential
 from keras.layers import Dense
-from keras.optimizer import SGD
 import tensorflow as tf
 import pandas as pd 
 import os

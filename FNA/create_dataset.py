@@ -1,6 +1,5 @@
 from __future__ import absolute_import, division, print_function
 
-import tensorflow as tf
 import pandas as pd 
 import os
 from os.path import realpath, abspath
