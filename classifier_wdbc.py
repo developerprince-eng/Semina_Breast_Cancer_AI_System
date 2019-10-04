@@ -30,6 +30,12 @@ def main():
     print(features_test)
 
     print(label_test)
+
+    #===========================================================================================================================================================
+    # labels = create_dataset.__obtain_labels__('input/wdbc.data', number_features=30, number_labels=1)
+
+    # print(labels)
+    #===========================================================================================================================================================
     #Initiate Generate Model Object
     classifer = gm.GENERATE_MODEL() 
 
