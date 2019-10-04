@@ -37,7 +37,7 @@ class GENERATE_MODEL():
         metrics=['accuracy'])
         # Fit the model
         model.fit(features_train, labels_train, epochs=150, batch_size=batch_size, verbose=2)
-     
+
         score = model.evaluate(features_test, labels_test, verbose=1)
         # round predictions
         accuracy = score[1]

@@ -20,7 +20,16 @@ class CREATE_DATASET():
     def __obtain_data__(self, path, number_features, number_labels):
         data_set = pd.read_csv(path, low_memory=False)
         input_x = data_set.iloc[ : , number_labels:(number_features+number_labels)]
-        input_y = data_set.iloc[ : , 1:(number_labels+1)]
+        ref_input_y = data_set.iloc[ : , 1:(number_labels+1)]
+        input_y = []
+
+        for item in input_y:
+            if(item == 'M'):
+                input_y.append(1)
+            elif(item == 'B'):
+                input_y.append(0)
+        
+
         x_train, x_test, y_train, y_test = train_test_split(input_x, input_y ,test_size = 0.2, random_state = 0)
 
         return input_x, x_train, x_test, y_train, y_test
