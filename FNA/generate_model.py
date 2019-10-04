@@ -31,7 +31,7 @@ class GENERATE_MODEL():
         model.add(Dense(10, input_dim=x_dim, init='uniform', activation='relu'))
         model.add(Dense(60, init='uniform', activation='relu'))
         model.add(Dense(30, init='uniform', activation='sigmoid'))
-        model.add(Dense(2, init='uniform', activation='sigmoid'))                                                                                                                                                                                                                       
+        model.add(Dense(1, init='uniform', activation='sigmoid'))                                                                                                                                                                                                                       
         # Compile model
         model.compile(loss='binary_crossentropy', optimizer='adam',
         metrics=['accuracy'])

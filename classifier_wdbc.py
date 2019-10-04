@@ -17,8 +17,19 @@ def main():
     print(input_data)
 
     #Obtain Training and Testing DataSet
-    input_x, features_train, features_test, label_train, label_test = create_dataset.__obtain_data__('input/wdbc.data', number_features=30, number_labels=2)
+    input_x, features_train, features_test, label_train, label_test = create_dataset.__obtain_data__('input/wdbc.data', number_features=30, number_labels=1)
 
+    print(input_x)
+
+    print(features_train)
+
+    print(label_train)
+
+    print("-----------------------------Run Test---------------------------")
+
+    print(features_test)
+
+    print(label_test)
     #Initiate Generate Model Object
     classifer = gm.GENERATE_MODEL() 
 
