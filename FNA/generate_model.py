@@ -45,6 +45,26 @@ class GENERATE_MODEL():
     
         return accuracy
 
+    def kr_train_DNN_Seq_02(self,x_dim ,features_train ,features_test, labels_train , labels_test, batch_size):
+        # create model
+        model = Sequential()
+        model.add(Dense(10, input_dim=x_dim, init='uniform', activation='relu'))
+        model.add(Dense(60, init='uniform', activation='relu'))
+        model.add(Dense(30, init='uniform', activation='sigmoid'))
+        model.add(Dense(1, init='uniform', activation='sigmoid'))                                                                                                                                                                                                                       
+        # Compile model
+        model.compile(loss='binary_crossentropy', optimizer='adam',
+        metrics=['accuracy'])
+        # Fit the model
+        model.fit(features_train, labels_train, epochs=150, batch_size=batch_size, verbose=2)
+
+        score = model.evaluate(features_test, labels_test, verbose=1)
+        # round predictions
+        accuracy = score[1]
+        accuracy = accuracy * 100
+    
+        return accuracy
+
     # DNN CLassifier
     def tf__evaluate_DNN__(self, input_x ,features_train ,features_test, labels_train , labels_test, batch_size):
         estimator = tf.estimator.DNNClassifier(
