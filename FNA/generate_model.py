@@ -41,6 +41,7 @@ class GENERATE_MODEL():
         score = model.evaluate(features_test, labels_test, verbose=1)
         # round predictions
         accuracy = score[1]
+        accuracy = accuracy * 100
     
         return accuracy
 

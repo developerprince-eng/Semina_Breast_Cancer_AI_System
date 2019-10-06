@@ -40,9 +40,9 @@ def main():
     classifer = gm.GENERATE_MODEL() 
 
         #Model Generation and Metric Evaluation
-    metric1, _ = classifer.kr_train_DNN_Seq_01(30, features_train, features_test, label_train,  label_test, batch_size=100)
+    metric1 = classifer.kr_train_DNN_Seq_01(30, features_train, features_test, label_train,  label_test, batch_size=100)
 
-    print(metric1)
+    print(f'\nAccuracy of your FNA Breast Cancer DNN AI Model is : \033[1m \033[92m{metric1}%')
 
 if __name__ == "__main__":
     main()

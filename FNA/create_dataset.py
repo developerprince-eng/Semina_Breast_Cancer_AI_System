@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from os.path import realpath, abspath
 import numpy as np 
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.model_selection import train_test_split
 
 os.getcwd()
@@ -21,15 +22,10 @@ class CREATE_DATASET():
         data_set = pd.read_csv(path, low_memory=False)
         input_x = data_set.iloc[ : , (number_labels+1):(number_features+number_labels+1)]
         ref_input_y = data_set.iloc[ : , 1:(number_labels+1)]
-        input_y = []
-
-        for item in ref_input_y.values:
-            if(item == 'M'):
-                input_y.append(1)
-            elif(item == 'B'):
-                input_y.append(0)
+        label_encoder = LabelEncoder()
+        temp_y = label_encoder.fit_transform(ref_input_y)
+        input_y = pd.Series(temp_y)
         
-
         x_train, x_test, y_train, y_test = train_test_split(input_x, input_y ,test_size = 0.2, random_state = 0)
 
         return input_x, x_train, x_test, y_train, y_test
@@ -38,12 +34,7 @@ class CREATE_DATASET():
         data_set = pd.read_csv(path, low_memory=False)
         input_x = data_set.iloc[ : , number_labels:(number_features+number_labels)]
         ref_input_y = data_set.iloc[ : , 1:(number_labels+1)]
-        input_y = []
-
-        for item in ref_input_y.values:
-            if(item == 'M'):
-                input_y.append(1)
-            elif(item == 'B'):
-                input_y.append(0)
+        label_encoder = LabelEncoder()
+        input_y = label_encoder.fit_transform(ref_input_y)
         
         return input_y
