@@ -17,7 +17,7 @@ def main():
     print(input_data)
 
     #Obtain Training and Testing DataSet
-    input_x, features_train, features_test, label_train, label_test = create_dataset.__obtain_data__('input/wdbc.data', number_features=30, number_labels=1)
+    input_x, features_train, features_test, label_train, label_test = create_dataset.__obtain_data__csv__fl__lbencode__('input/wdbc.data', number_features=30, number_labels=1)
 
     print(input_x)
 
@@ -31,11 +31,6 @@ def main():
 
     print(label_test)
 
-    #===========================================================================================================================================================
-    # labels = create_dataset.__obtain_labels__('input/wdbc.data', number_features=30, number_labels=1)
-
-    # print(labels)
-    #===========================================================================================================================================================
     #Initiate Generate Model Object
     classifer = gm.GENERATE_MODEL() 
 

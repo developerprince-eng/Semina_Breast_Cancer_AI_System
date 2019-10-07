@@ -35,6 +35,8 @@ class GENERATE_MODEL():
         # Compile model
         model.compile(loss='binary_crossentropy', optimizer='adam',
         metrics=['accuracy'])
+        #Model Summary
+        model.summary()
         # Fit the model
         model.fit(features_train, labels_train, epochs=150, batch_size=batch_size, verbose=2)
 
@@ -48,13 +50,15 @@ class GENERATE_MODEL():
     def kr_train_DNN_Seq_02(self,x_dim ,features_train ,features_test, labels_train , labels_test, batch_size):
         # create model
         model = Sequential()
-        model.add(Dense(10, input_dim=x_dim, init='uniform', activation='relu'))
-        model.add(Dense(60, init='uniform', activation='relu'))
-        model.add(Dense(30, init='uniform', activation='sigmoid'))
+        model.add(Dense(9, input_dim=x_dim, init='uniform', activation='relu'))
+        model.add(Dense(36, init='uniform', activation='relu'))
+        model.add(Dense(36, init='uniform', activation='sigmoid'))
         model.add(Dense(1, init='uniform', activation='sigmoid'))                                                                                                                                                                                                                       
         # Compile model
         model.compile(loss='binary_crossentropy', optimizer='adam',
         metrics=['accuracy'])
+        # Model Summary
+        model.summary()
         # Fit the model
         model.fit(features_train, labels_train, epochs=150, batch_size=batch_size, verbose=2)
 
