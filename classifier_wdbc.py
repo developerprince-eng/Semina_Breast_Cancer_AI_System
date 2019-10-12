@@ -10,7 +10,7 @@ def main():
     create_dataset = dt.CREATE_DATASET()
 
     #Obtain and Extract Text file or CSV file
-    input_data = create_dataset.__read_csv__('input/wdbc.data')
+    input_data = create_dataset.__read_csv__('input/wdbc.data')         
 
     #Print Dataset
 
@@ -35,7 +35,7 @@ def main():
     classifer = gm.GENERATE_MODEL() 
 
         #Model Generation and Metric Evaluation
-    metric1 = classifer.kr_train_DNN_Seq_01(30, features_train, features_test, label_train,  label_test, batch_size=100)
+    metric1 = classifer.kr_train_DNN_Seq_03(30, features_train, features_test, label_train,  label_test, batch_size=100)
 
     print(f'\nAccuracy of your FNA Breast Cancer DNN AI Model is : \033[1m \033[92m{metric1}%')
 
