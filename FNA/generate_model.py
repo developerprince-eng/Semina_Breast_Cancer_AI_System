@@ -84,7 +84,14 @@ class GENERATE_MODEL():
         model.summary()
         # Fit the model
         model.fit(features_train, labels_train, epochs=10000, batch_size=batch_size, verbose=2)
-
+        model_yaml = model.to_yaml()
+        with open("seq03_model.yaml", "w") as yaml_file:
+            yaml_file.write(model_yaml)
+        # serialize weights to HDF5
+        model_json = model.to_json()
+        with open("seq03_model.json", "w") as json_file:
+            json_file.write(model_json)
+        model.save_weights("seq03_model.h5")
         score = model.evaluate(features_test, labels_test, verbose=1)
         # round predictions
         accuracy = score[1]
